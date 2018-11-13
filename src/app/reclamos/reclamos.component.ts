@@ -10,6 +10,7 @@ export class ReclamosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("ngOnInit ReclamosComponent");
   }
 
 }
