@@ -14,7 +14,7 @@ export class AutenticacionService {
     let header: HttpHeaders = new HttpHeaders();
     header.set('Content-Type', 'Application/json');
 
-    return this._http.post<User>("http://localhost:8081/login",
+    return this._http.post<User>("http://localhost:8080/ReclamosService/rest/login",
       { "usuario": usuario, "clave": clave },
       { "headers": header });
   }
