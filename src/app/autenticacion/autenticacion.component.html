@@ -1,3 +1,13 @@
-<p>
-  autenticacion works!
-</p>
+<div>
+
+  <mat-form-field>
+    <input [(ngModel)]="user.usuario" matInput placeholder="Usuario">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [(ngModel)]="user.clave" matInput placeholder="Password">
+  </mat-form-field>
+
+  <button mat-button color="primary" (click)="login()">Primary</button>
+
+</div>
