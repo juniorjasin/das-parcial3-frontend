@@ -14,4 +14,8 @@ export class ReclamosService {
     return this._http.get<ReclamoModel[]>('http://localhost:8080/ReclamosService/rest/reclamos');
   }
 
+  actualizarReclamo(reclamo){
+    return this._http.put('http://localhost:8080/ReclamosService/rest/reclamos', reclamo);
+  }
+
 }

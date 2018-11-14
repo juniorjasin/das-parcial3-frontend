@@ -1,3 +1,19 @@
 <p>
-  formulario-reclamo works!
+  formulario-reclamo WORK WORK WORK!
 </p>
+
+<div>
+  <div id="responsable">
+    <mat-form-field>
+      <input [(ngModel)]="reclamo.resp_respuesta" type="number" matInput placeholder="Responsable de respuesta">
+    </mat-form-field>
+  </div>
+  <div id="respuesta">
+    <mat-form-field>
+      <textarea [(ngModel)]="reclamo.respuesta" matInput rows="8" cols="100" placeholder="Deje su respuesta"></textarea>
+    </mat-form-field>
+  </div>
+  <div id="btn-responder">
+    <button mat-button color="primary" (click)="responder()">Responder</button>
+  </div>
+</div>

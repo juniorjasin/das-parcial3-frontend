@@ -4,12 +4,16 @@ import { ReclamosComponent } from './reclamos.component';
 import { reclamosRoutes } from './reclamos.routing'
 import { ListaComponent } from './components/lista/lista.component'
 import { FormularioReclamoComponent } from './components/formulario-reclamo/formulario-reclamo.component';
-
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReclamosService } from './services/reclamos.service';
 import { HttpClientModule } from '@angular/common/http';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+
+// material
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +24,8 @@ import {MatTableModule} from '@angular/material/table';
   imports: [
     MatInputModule,
     MatFormFieldModule,
+    MatButtonModule,
+    FormsModule,
     CommonModule,
     reclamosRoutes,
     HttpClientModule,
