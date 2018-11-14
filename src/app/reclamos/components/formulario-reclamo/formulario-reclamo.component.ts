@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ReclamosService } from '../../services/reclamos.service';
+import { UserModel } from 'src/app/autenticacion/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-reclamo',
@@ -10,10 +12,12 @@ import { ReclamosService } from '../../services/reclamos.service';
 export class FormularioReclamoComponent implements OnInit {
 
   constructor(private _activeRoute: ActivatedRoute,
+    private _router: Router,
     private _reclamosService: ReclamosService) { }
 
   private _nro_reclamo: number;
   private _reclamo: any = {};
+  private _user: UserModel;
 
   ngOnInit() {
     this._activeRoute.params.subscribe(params => {
@@ -23,11 +27,19 @@ export class FormularioReclamoComponent implements OnInit {
 
   responder(){
     this._reclamo.nro_reclamo = +this._nro_reclamo;
-    console.log(this._reclamo);
+    this._user = JSON.parse(sessionStorage.getItem('user'));
+    this._reclamo.resp_respuesta = this._user['nroPersona'];
+    
     this._reclamosService.actualizarReclamo(this.reclamo)
     .subscribe(
-      response => console.log('response:', response),
-      err => console.log('error:',err)
+      response => {
+        console.log('response:', response);
+        this._router.navigate(['reclamos/lista']);
+      },
+      error => {
+         console.log('error:',error);
+         // hacer mensaje de error
+      }
     );
   }
 
