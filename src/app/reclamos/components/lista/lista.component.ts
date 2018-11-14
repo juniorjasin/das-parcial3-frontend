@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReclamosService } from '../../services/reclamos.service';
+import { ReclamoModel } from '../../models/reclamo.model';
 
 @Component({
   selector: 'app-lista',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
+  _reclamos: ReclamoModel[] = [];
+
+  get reclamos(): ReclamoModel[] {
+    return this._reclamos;
+  }
+
+  constructor(private _reclamosService: ReclamosService) { }
 
   ngOnInit() {
+    this._reclamosService.obtenerReclamos().subscribe(
+      reclamos => this._reclamos = reclamos,
+      error => console.log(error)
+    );
   }
 
 }

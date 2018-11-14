@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reclamos',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReclamosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
-    console.log("ngOnInit ReclamosComponent");
+    console.log('ngOnInit ReclamosComponent');
+
+    // Volver al login en caso de entrar a la ruta directamente
+    // y no existir un usuario logueado
+    if (sessionStorage.getItem('user') === null) {
+      this._router.navigate(['autenticacion']);
+    }
   }
 
 }

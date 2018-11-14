@@ -7,6 +7,9 @@ import { FormularioReclamoComponent } from './components/formulario-reclamo/form
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReclamosService } from './services/reclamos.service';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -18,10 +21,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatInputModule,
     MatFormFieldModule,
     CommonModule,
-    reclamosRoutes
+    reclamosRoutes,
+    HttpClientModule,
+    MatTableModule
   ],
   exports: [
     ReclamosComponent
+  ],
+  providers: [
+    ReclamosService
   ]
 })
 export class ReclamosModule { }

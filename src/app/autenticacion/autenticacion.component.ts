@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from './models/user.model'
+import { UserModel } from './models/user.model';
 import { AutenticacionService } from './services/autenticacion.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autenticacion',
@@ -12,19 +13,31 @@ export class AutenticacionComponent implements OnInit {
   private _user: any = {};
 
 
-  constructor(private _service: AutenticacionService) { }
+  constructor(
+    private _service: AutenticacionService,
+    private _router: Router) { }
 
   ngOnInit() {
-    console.log("ngOnInit AutenticacionComponent");
+    console.log('ngOnInit AutenticacionComponent');
+
+    this._user['usuario'] = 'napellido1';
+    this._user['clave'] = '00000001';
   }
 
-  login(){
-    console.log(JSON.stringify(this.user));
-    this._service.login(this._user['usuario'],  this._user['clave']).subscribe(user => {
-      console.log(user);
-    },
-    err => console.log(err));
+  login() {
+    this._service
+      .login(this._user['usuario'], this._user['clave'])
+      .subscribe(user => {
+        // Guardar usuario para obtenerlo en reclamos
+        sessionStorage.setItem('user', JSON.stringify(user));
 
+        // Redireccionar a reclamos
+        this._router.navigate(['/reclamos']);
+      },
+      err => {
+        // HANDLE ERROR
+        console.log(err);
+    });
   }
 
   get user(): UserModel {

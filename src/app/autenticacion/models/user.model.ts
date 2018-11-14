@@ -1,13 +1,9 @@
 export interface User {
-
-    // {"apellido":"APELLIDO1","nombre":"NOMBRE1","nroDocumento":"00000001","nroPersona":1,"tipoDocumento":"DNI"}
-
-    nombre: string,
-    apellido: string,
-    nroDocumento: string,
-    nroPersona: number,
-    tipoDocumento: string,
-    
+    nombre: string;
+    apellido: string;
+    nroDocumento: string;
+    nroPersona: number;
+    tipoDocumento: string;
 }
 
 export class UserModel {
@@ -55,7 +51,7 @@ export class UserModel {
     set tipo_documento(tipo_documento: string){
         this._tipo_documento = tipo_documento;
     }
-    
+
     get tipo_documento(){
         return this._tipo_documento;
     }
@@ -74,8 +70,8 @@ export class UserModel {
 
     get clave(){
         return this._clave;
-    }   
-    
+    }
+
     set nro_documento(nro_documento: string){
         this._nro_documento = nro_documento;
     }
