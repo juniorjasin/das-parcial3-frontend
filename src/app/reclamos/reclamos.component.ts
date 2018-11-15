@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserModel } from '../autenticacion/models/user.model';
 
 @Component({
   selector: 'app-reclamos',
@@ -10,6 +11,8 @@ export class ReclamosComponent implements OnInit {
 
   constructor(private _router: Router) { }
 
+  private _usr: UserModel;
+
   ngOnInit() {
     console.log('ngOnInit ReclamosComponent');
 
@@ -17,7 +20,13 @@ export class ReclamosComponent implements OnInit {
     // y no existir un usuario logueado
     if (sessionStorage.getItem('user') === null) {
       this._router.navigate(['autenticacion']);
+    } else {
+      this._usr = JSON.parse(sessionStorage.getItem("user"));
     }
   }
 
+  cerrarSesion(): any {
+    sessionStorage.removeItem("user");
+    this._router.navigate(['/login']);
+  }
 }

@@ -12,6 +12,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
+
 import { FormsModule } from '@angular/forms';
 
 
@@ -29,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     reclamosRoutes,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule,
+    MatIconModule
   ],
   exports: [
     ReclamosComponent

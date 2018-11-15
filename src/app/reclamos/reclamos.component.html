@@ -1,3 +1,18 @@
-<h1>Reclamos header</h1>
+<h1>Datos usuario</h1>
+<mat-grid-list cols="8" rowHeight="100px">
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-icon mat-list-icon>face</mat-icon>
+        <h4 mat-line>{{_usr.nombre}}, {{_usr.apellido}} </h4>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-icon mat-list-icon>chrome_reader_mode</mat-icon>
+        <h4 mat-line>{{_usr.nroDocumento}}</h4>
+    </mat-grid-tile>
+    <mat-grid-tile (click) ="cerrarSesion()" [colspan]="4" [rowspan]="1">
+        <mat-icon mat-list-icon>power_settings_new</mat-icon>
+        <h4 mat-line>Cerrar Sesion</h4>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<hr>
 <router-outlet></router-outlet>
-<h1>Reclamos footer</h1>
