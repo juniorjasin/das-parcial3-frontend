@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ReclamosService } from '../../services/reclamos.service';
-import { UserModel } from 'src/app/autenticacion/models/user.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,11 +12,11 @@ export class FormularioReclamoComponent implements OnInit {
 
   constructor(private _activeRoute: ActivatedRoute,
     private _router: Router,
-    private _reclamosService: ReclamosService) { }
+    private _reclamosService: ReclamosService) {}
 
   private _nro_reclamo: number;
   private _reclamo: any = {};
-  private _user: UserModel;
+  private _user: any;
 
   ngOnInit() {
     this._activeRoute.params.subscribe(params => {
@@ -27,7 +26,7 @@ export class FormularioReclamoComponent implements OnInit {
 
   responder(){
 
-    if (this._reclamo.respuesta == undefined){
+    if (this._reclamo.respuesta == undefined || this._reclamo.respuesta.length < 1){
       throw new Error("Debe indicar una respuesta");
     }
 
