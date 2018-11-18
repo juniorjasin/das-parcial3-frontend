@@ -13,7 +13,11 @@ export class ReclamosComponent implements OnInit {
 
   private _user: UserModel;
 
-  ngOnInit() {
+  get user(): UserModel {
+    return this._usr;
+  }
+
+ngOnInit() {
     console.log('ngOnInit ReclamosComponent');
 
     // Volver al login en caso de entrar a la ruta directamente
@@ -31,7 +35,7 @@ export class ReclamosComponent implements OnInit {
   
 
   cerrarSesion(): any {
-    sessionStorage.removeItem("user");
-    this._router.navigate(['/login']);
+    sessionStorage.removeItem('user');
+    this._router.navigate(['autenticacion/login']);
   }
 }

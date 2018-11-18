@@ -1,0 +1,14 @@
+#usuario {
+  margin-left: 20px;
+}
+
+#nroDocumento {
+  margin-left: 20px;
+}
+
+#cerrarSesion {
+  position: absolute;
+  right: 0;
+  margin-right: 40px;
+  cursor: pointer;
+}

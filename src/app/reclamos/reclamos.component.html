@@ -1,1 +1,21 @@
+<mat-toolbar color="primary">
+  <span>Reclamos</span>
+  <div id="usuario" class="">
+    <mat-icon mat-list-icon>face</mat-icon>
+    <span style="margin-left: 5px;">
+      {{user.apellido}} {{user.nombre}}
+    </span>
+  </div>
+  <div id="nroDocumento">
+    <mat-icon mat-list-icon>chrome_reader_mode</mat-icon>
+    <span style="margin-left: 5px;">
+      {{user.nroDocumento}}
+    </span>
+  </div>
+  <div id="cerrarSesion" (click)="cerrarSesion()">
+    <mat-icon mat-list-icon>power_settings_new</mat-icon>
+    <span>Cerrar Sesión</span>
+  </div>
+</mat-toolbar>
+<hr>
 <router-outlet></router-outlet>

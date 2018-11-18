@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 
   <mat-form-field>
     <input [(ngModel)]="user.usuario" matInput placeholder="Usuario">
@@ -10,4 +10,34 @@
 
   <button mat-button color="primary" (click)="login()">Primary</button>
 
+</div> -->
+<div class="login-page">
+  <div class="content">
+      <!-- <h1 class="app-name">Sb Admin Material</h1> -->
+      <form class="login-form">
+          <div class="text-center">
+              <h2 class="app-name" style="color: #3f51b5">Bienvenido</h2>
+          </div>
+          <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlexFill>
+                  <mat-form-field class="w-100">
+                      <input [(ngModel)]="user.usuario" matInput placeholder="Usuario" autofocus>
+                  </mat-form-field>
+              </div>
+          </div>
+          <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlexFill>
+                  <mat-form-field class="w-100">
+                      <input matInput [(ngModel)]="user.clave" type="password" placeholder="Clave">
+                  </mat-form-field>
+              </div>
+          </div>
+          <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlexFill>
+                  <button (click)="login()" mat-raised-button color="primary" class="w-100" (click)="onLogin()">Login</button>
+              </div>
+          </div>
+
+      </form>
+  </div>
 </div>

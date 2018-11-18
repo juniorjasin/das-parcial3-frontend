@@ -26,7 +26,7 @@ export class ListaComponent implements OnInit {
     'contactar',
     'responder'];
 
-  get reclamos(): ReclamoModel[] {    
+  get reclamos(): ReclamoModel[] {
     return this._reclamos;
   }
 
@@ -43,11 +43,11 @@ export class ListaComponent implements OnInit {
     );
   }
 
-  responder(nro_reclamo: number): void {    
+  responder(nro_reclamo: number): void {
     this._router.navigate(['/reclamos',nro_reclamo,'formulario']);
   }
 
-  respuesta_rapida(nro_reclamo: number): void {    
+  respuesta_rapida(nro_reclamo: number): void {
     // creo un usuario y un reclamo con let porque despues de usarlos en esta funcion no
     // los necesito en otro lugar
     let _usr: UserModel = JSON.parse(sessionStorage.getItem('user'));
@@ -57,7 +57,7 @@ export class ListaComponent implements OnInit {
       "resp_respuesta": _usr["nroPersona"]
     }
     this._reclamosService.actualizarReclamo(reclamo).subscribe(
-      ok => {        
+      ok => {
         // con reload recargo la pagina luego de actualizar
         window.location.reload();
       },
