@@ -14,7 +14,7 @@ export class ReclamosComponent implements OnInit {
   private _user: UserModel;
 
   get user(): UserModel {
-    return this._usr;
+    return this._user;
   }
 
 ngOnInit() {
@@ -29,10 +29,6 @@ ngOnInit() {
     }
   }
 
-  get user(){
-    return this._user;
-  }
-  
 
   cerrarSesion(): any {
     sessionStorage.removeItem('user');
