@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-autenticacion',
   templateUrl: './autenticacion.component.html',
-  styleUrls: ['./autenticacion.component.css']
+  styleUrls: ['./autenticacion.component.scss']
 })
 export class AutenticacionComponent implements OnInit {
 
