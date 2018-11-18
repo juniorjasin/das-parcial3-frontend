@@ -24,11 +24,11 @@ export class UserModel {
         this._nro_documento = user.nroDocumento;
     }
 
-    set nro_persona(nro_persona: number){
+    set nroPersona(nro_persona: number){
         this._nro_persona = nro_persona;
     }
 
-    get nro_persona(){
+    get nroPersona(){
         return this._nro_persona;
     }
 
@@ -48,11 +48,11 @@ export class UserModel {
         return this._apellido;
     }
 
-    set tipo_documento(tipo_documento: string){
+    set tipoDocumento(tipo_documento: string){
         this._tipo_documento = tipo_documento;
     }
 
-    get tipo_documento(){
+    get tipoDocumento(){
         return this._tipo_documento;
     }
 
@@ -72,11 +72,11 @@ export class UserModel {
         return this._clave;
     }
 
-    set nro_documento(nro_documento: string){
+    set nroDocumento(nro_documento: string){
         this._nro_documento = nro_documento;
     }
 
-    get nro_documento(){
+    get nroDocumento(){
         return this._nro_documento;
     }
 }

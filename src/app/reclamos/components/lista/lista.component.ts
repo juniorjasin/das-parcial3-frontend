@@ -35,9 +35,7 @@ export class ListaComponent implements OnInit {
 
   ngOnInit() {
     this._reclamosService.obtenerReclamos().subscribe(
-      reclamos => {
-        this._reclamos = reclamos;
-        this._reclamos[0].reclamo = 'qjwekjqwkejaskdjaksdjkjwqekjqwekjqwekjqkwejqkwjekqjewkqjwekqjwekqjwkeqjwe'; },
+      reclamos => this._reclamos = reclamos,
       error => console.log(error)
     );
   }
