@@ -19,7 +19,6 @@ export class AutenticacionComponent implements OnInit {
 
   ngOnInit() {
     console.log('ngOnInit AutenticacionComponent');
-
     this._user['usuario'] = 'napellido1';
     this._user['clave'] = '00000001';
   }
@@ -34,9 +33,10 @@ export class AutenticacionComponent implements OnInit {
         // Redireccionar a reclamos
         this._router.navigate(['/reclamos']);
       },
-      err => {
-        // HANDLE ERROR
-        console.log(err);
+      error => {
+        // HANDLE ERRorOR
+        console.log(error);
+        throw new Error(JSON.stringify(error["error"]));
     });
   }
 

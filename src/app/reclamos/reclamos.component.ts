@@ -11,7 +11,7 @@ export class ReclamosComponent implements OnInit {
 
   constructor(private _router: Router) { }
 
-  private _usr: UserModel;
+  private _user: UserModel;
 
   get user(): UserModel {
     return this._usr;
@@ -25,9 +25,14 @@ ngOnInit() {
     if (sessionStorage.getItem('user') === null) {
       this._router.navigate(['autenticacion']);
     } else {
-      this._usr = JSON.parse(sessionStorage.getItem("user"));
+      this._user = JSON.parse(sessionStorage.getItem("user"));
     }
   }
+
+  get user(){
+    return this._user;
+  }
+  
 
   cerrarSesion(): any {
     sessionStorage.removeItem('user');

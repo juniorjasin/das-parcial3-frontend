@@ -10,7 +10,6 @@ import { AutenticacionService } from './services/autenticacion.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule, MatGridListModule, MatIconModule } from '@angular/material';
 
-
 @NgModule({
   declarations: [
     AutenticacionComponent
