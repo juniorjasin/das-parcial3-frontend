@@ -1,18 +1,22 @@
-<h1>Datos usuario</h1>
-<mat-grid-list cols="8" rowHeight="100px">
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-        <mat-icon mat-list-icon>face</mat-icon>
-        <h4 mat-line>{{_usr.nombre}}, {{_usr.apellido}} </h4>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-        <mat-icon mat-list-icon>chrome_reader_mode</mat-icon>
-        <h4 mat-line>{{_usr.nroDocumento}}</h4>
-    </mat-grid-tile>
-    <mat-grid-tile (click) ="cerrarSesion()" [colspan]="4" [rowspan]="1">
-        <mat-icon mat-list-icon>power_settings_new</mat-icon>
-        <h4 mat-line>Cerrar Sesion</h4>
-    </mat-grid-tile>
-</mat-grid-list>
+<mat-toolbar color="primary">
+  <span>Reclamos</span>
+  <div id="usuario" class="">
+    <mat-icon mat-list-icon>face</mat-icon>
+    <span style="margin-left: 5px;">
+      {{user.apellido}} {{user.nombre}}
+    </span>
+  </div>
+  <div id="nroDocumento">
+    <mat-icon mat-list-icon>chrome_reader_mode</mat-icon>
+    <span style="margin-left: 5px;">
+      {{user.nro_documento}}
+    </span>
+  </div>
+  <div id="cerrarSesion" (click)="cerrarSesion()">
+    <mat-icon mat-list-icon>power_settings_new</mat-icon>
+    <span>Cerrar Sesión</span>
+  </div>
+</mat-toolbar>
 
 <hr>
 <router-outlet></router-outlet>

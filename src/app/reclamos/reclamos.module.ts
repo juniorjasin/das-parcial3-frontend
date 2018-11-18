@@ -15,6 +15,11 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 
+import {
+  MatDialogModule, MatPaginatorModule, MatSortModule,
+  MatToolbarModule,
+} from '@angular/material';
+
 import { FormsModule } from '@angular/forms';
 
 
@@ -26,6 +31,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     MatInputModule,
+    MatToolbarModule,
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
