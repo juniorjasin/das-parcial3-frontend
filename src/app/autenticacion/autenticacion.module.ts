@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { AutenticacionService } from './services/autenticacion.service';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AutenticacionComponent
