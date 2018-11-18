@@ -1,10 +1,13 @@
-<div>
-  <div id="respuesta">
-    <mat-form-field>
-      <textarea [(ngModel)]="reclamo.respuesta" matInput rows="8" cols="100" placeholder="Deje su respuesta" required></textarea>
+<div class="parent">
+  <div class="container card">
+    
+    <mat-form-field id="responder">
+      <textarea [(ngModel)]="reclamo.respuesta" matInput rows="10" placeholder="Deje su respuesta" required></textarea>
     </mat-form-field>
-  </div>
-  <div id="btn-responder">
-    <button mat-button color="primary" (click)="responder()">Responder</button>
+
+    <div>
+      <button id="btn-responder" mat-raised-button color="primary" (click)="responder()">Responder</button>
+    </div>
+    
   </div>
 </div>
