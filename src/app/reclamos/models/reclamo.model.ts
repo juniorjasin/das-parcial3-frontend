@@ -11,7 +11,7 @@ export class ReclamoModel {
     private _contactar: string;
     private _localidad: string;
     private _reclamo: string;
-    private _nroReclamo: string;
+    private _nroReclamo: number;
 
     set fechaHora(fechaHora: string) {
         this._fechaHora = fechaHora;
@@ -101,7 +101,7 @@ export class ReclamoModel {
         return this._reclamo;
     }
 
-    set nroReclamo(nroReclamo: string) {
+    set nroReclamo(nroReclamo: number) {
         this._nroReclamo = nroReclamo;
     }
 

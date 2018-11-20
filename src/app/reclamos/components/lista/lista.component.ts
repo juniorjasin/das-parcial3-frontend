@@ -11,7 +11,7 @@ import { UserModel } from 'src/app/autenticacion/models/user.model';
 })
 export class ListaComponent implements OnInit {
 
-  _reclamos: ReclamoModel[] = [];
+  private _reclamos: ReclamoModel[] = [];
   displayedColumns: string[] = [
     'nombre',
     'apellido',
@@ -60,7 +60,9 @@ export class ListaComponent implements OnInit {
     this._reclamosService.actualizarReclamo(reclamo).subscribe(
       ok => {
         // con reload recargo la pagina luego de actualizar
-        window.location.reload();
+        // window.location.reload();
+        let index = this._reclamos.findIndex(r => r.nroReclamo === nroReclamo);
+        this._reclamos = [...this._reclamos.filter(r => r.nroReclamo !== nroReclamo)];
       },
       err => {
         console.log("Error al actualizar reclamo en lista.component --> " + err);
