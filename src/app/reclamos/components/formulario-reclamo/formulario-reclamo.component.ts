@@ -30,9 +30,9 @@ export class FormularioReclamoComponent implements OnInit {
       throw new Error("Debe indicar una respuesta");
     }
 
-    this._reclamo.nro_reclamo = +this._nro_reclamo;
+    this._reclamo.nroReclamo = +this._nro_reclamo;
     this._user = JSON.parse(sessionStorage.getItem('user'));
-    this._reclamo.resp_respuesta = this._user['nroPersona'];
+    this._reclamo.respRespuesta = this._user['nroPersona'];
     
     this._reclamosService.actualizarReclamo(this.reclamo)
     .subscribe(

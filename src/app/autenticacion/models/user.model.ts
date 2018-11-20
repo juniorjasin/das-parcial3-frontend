@@ -8,28 +8,28 @@ export interface User {
 
 export class UserModel {
 
-    private _nro_persona: number;
+    private _nroPersona: number;
     private _nombre: string;
     private _apellido: string;
-    private _tipo_documento: string;
-    private _nro_documento: string;
+    private _tipoDocumento: string;
+    private _nroDocumento: string;
     private _usuario: string;
     private _clave: string;
 
     constructor(user: User) {
-        this._nro_persona = user.nroPersona;
+        this._nroPersona = user.nroPersona;
         this._nombre = user.nombre;
         this._apellido = user.apellido;
-        this._tipo_documento = user.tipoDocumento;
-        this._nro_documento = user.nroDocumento;
+        this._tipoDocumento = user.tipoDocumento;
+        this._nroDocumento = user.nroDocumento;
     }
 
-    set nroPersona(nro_persona: number){
-        this._nro_persona = nro_persona;
+    set nroPersona(nroPersona: number){
+        this._nroPersona = nroPersona;
     }
 
     get nroPersona(){
-        return this._nro_persona;
+        return this._nroPersona;
     }
 
     set nombre(nombre: string){
@@ -48,12 +48,12 @@ export class UserModel {
         return this._apellido;
     }
 
-    set tipoDocumento(tipo_documento: string){
-        this._tipo_documento = tipo_documento;
+    set tipoDocumento(tipoDocumento: string){
+        this._tipoDocumento = tipoDocumento;
     }
 
     get tipoDocumento(){
-        return this._tipo_documento;
+        return this._tipoDocumento;
     }
 
     set usuario(usuario: string){
@@ -72,11 +72,11 @@ export class UserModel {
         return this._clave;
     }
 
-    set nroDocumento(nro_documento: string){
-        this._nro_documento = nro_documento;
+    set nroDocumento(nroDocumento: string){
+        this._nroDocumento = nroDocumento;
     }
 
     get nroDocumento(){
-        return this._nro_documento;
+        return this._nroDocumento;
     }
 }

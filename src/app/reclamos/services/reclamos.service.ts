@@ -15,6 +15,7 @@ export class ReclamosService {
   }
 
   actualizarReclamo(reclamo){
+  	console.log(reclamo);
     return this._http.put('http://localhost:8080/ReclamosService/rest/reclamos', reclamo);
   }
 

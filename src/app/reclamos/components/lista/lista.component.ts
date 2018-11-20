@@ -43,19 +43,20 @@ export class ListaComponent implements OnInit {
     );
   }
 
-  responder(nro_reclamo: number): void {
-    this._router.navigate(['/reclamos',nro_reclamo,'formulario']);
+  responder(nroReclamo: number): void {
+    this._router.navigate(['/reclamos',nroReclamo,'formulario']);
   }
 
-  respuesta_rapida(nro_reclamo: number): void {
+  respuesta_rapida(nroReclamo: number): void {
     // creo un usuario y un reclamo con let porque despues de usarlos en esta funcion no
     // los necesito en otro lugar
     let _usr: UserModel = JSON.parse(sessionStorage.getItem('user'));
     let reclamo : any = {
-      "nro_reclamo": nro_reclamo,
+      "nroReclamo": nroReclamo,
       "respuesta": "NO REQUIERE RESPONDER",
-      "resp_respuesta": _usr["nroPersona"]
-    }
+      "respRespuesta": _usr["nroPersona"]
+    };
+
     this._reclamosService.actualizarReclamo(reclamo).subscribe(
       ok => {
         // con reload recargo la pagina luego de actualizar
@@ -63,7 +64,8 @@ export class ListaComponent implements OnInit {
       },
       err => {
         console.log("Error al actualizar reclamo en lista.component --> " + err);
+        throw new Error("Error al actualizar reclamo");
       }
-    )
+    );
   }
 }
