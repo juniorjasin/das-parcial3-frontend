@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ReclamosService } from '../../services/reclamos.service';
 import { ReclamoModel } from '../../models/reclamo.model';
 import { Router } from '@angular/router';
-import { UserModel } from 'src/app/autenticacion/models/user.model';
+import { UserModel } from '../../../common/models/user.model';
 
 @Component({
   selector: 'app-lista',
